@@ -1,0 +1,17 @@
+{% block suggestion %}
+</br>
+</br>
+</br>
+</br>
+<h2>Random suggestions</h2>
+<div class="articles-list">
+    <ul style="list-style: none; padding: 0;">
+    {% for article in articles %}
+        <ul><img src="{{MEDIA_URL}}{{article.hero_image}}" style="width:50px"/></ul>
+        <ul><a href="{% url 'articles:detail' article.id %}">{{ article.title }}</a></ul>
+    {% empty %}
+        <ul>No articles to show</ul>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

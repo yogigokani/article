@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Articles{% endblock %}
+ 
+{% block pagebody %}
+
+<div class="row">
+	<div class="col-md-2">
+    {% block sidebar %}
+    
+    {% include 'partials/sidebar.html' %}
+    
+    {% endblock %}
+	</div>
+
+    <div class="col-md-10">
+            <div class="row">
+              <div class="col-md-12">
+                
+                <h1>{{featured_article.title}}</h1></br>
+		        
+		        <small class="text-muted">{{datenow}} | <a href="#">{{author}}</a></br>
+		        
+                <img src="{{MEDIA_URL}}{{featured_article.hero_image}}"/>
+                
+                <p>{{featured_article.body}}</p>
+                </br>
+		
+                <a href="/articles/detail/{{ featured_article.id }}">read more</a></br>
+		    </div>
+ 
+            
+            <div class="col-md-12">
+                  
+                  
+		    {% for article in sorted_article_list %}
+			        
+			        
+	               
+		                 <div class="col-md-1 papa">
+		                    <span class="numbering">{{ forloop.counter}}</span>
+		                 </div>
+			             <div class="col-md-11">
+				             
+				             <h4><strong><a href="/articles/detail/{{ article.id }}">{{ article.title }}</a></strong></h4>
+			                  <p>{{article.body}}</p>
+			                  <a href="" class="breakmaster">read more</a>
+				         </div>
+				      
+
+			{% empty %}
+			        
+			        <li>No articles to show</li>
+
+			{% endfor %}
+			</ul>
+
+		</div>
+		
+              <div class="col-md-12 suggestion">
+            
+              <hr style="color:#ececec; height:1px;">
+                  
+                  <h4>What to read next</h4>
+              
+              <hr style="color:#ececec; height:1px;">
+              
+                  
+                  {% for article in articles %}
+                      <div class="col-md-3 escobar ">
+                      <ul><img src="{{MEDIA_URL}}{{article.hero_image}}" style="width:50px"/></ul>
+                      <ul><a href="{% url 'articles:detail' article.id %}">{{ article.title }}</a></ul>
+                      </div>
+                  {% empty %}
+                      
+                      <ul>No articles to show</ul>
+                  
+                  {% endfor %}
+          
+              </div>
+
+		{% endblock %}
+
+
+
+
+

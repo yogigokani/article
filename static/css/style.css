@@ -1,0 +1,83 @@
+.side-menubar {
+	position: relative;
+	border: 1px solid #ccc;
+}
+
+.brand-block {
+	display: block;
+	padding: 20px 10px;
+}
+.tool-block {
+	display: block;
+	overflow: hidden;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0px;
+
+}
+.left-border {
+
+	border-left: 1px solid #ccc;
+}
+.tool-block > div > i {
+	text-align: center;
+	padding-left:10px;
+}
+.menu-option {
+	display: block;
+	position: relative;
+	margin-top: 20px;
+}
+
+
+.menu-option> ul > li > a {
+	display: block;
+	text-align: center;
+	padding: 20px 0px;
+	margin-bottom: 5px;
+
+}
+.menu-option > ul > li > a > i {
+	display: block;
+	width: 100%;
+}
+/*.suggestion-title{
+	
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}*/
+.suggestion{
+    margin-top:10px;
+	
+}
+.suggestion > div > div > img{
+	/*width:100px; 
+	height:100px;*/
+	 
+	background-size: cover; 
+	width:100%;
+}
+.papa {
+margin-top: 30px;
+padding-left: 0px;
+padding-right: 30px;
+}
+.numbering {
+	display: block;
+	border:1px solid #000;
+	border-radius: 50%;
+	padding: 14px 20px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.breakmaster {
+	display: block;
+	margin: 0px 0px 20px 0px;
+}
+.pablo {
+display: block;
+padding: 20px 0px;
+}
+.escobar {
+	padding-left: 0px!important;
+}
