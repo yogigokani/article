@@ -2,6 +2,7 @@
 
 {% extends 'base.html' %}
 
+
 {% block title %}Articles{% endblock %}
  
 {% block pagebody %}
@@ -22,19 +23,19 @@
               
                 <div class="col-md-12">
                 
-		            <h1>{{featured_article.title}}</h1></br>
-			        
-			        <small class="text-muted">{{datenow}} | <a href="#">{{featured_article.author_name}}</a></br>
-			        
-		            <img src="{{MEDIA_URL}}{{featured_article.hero_image}}"/>
-		            
-		            </br>
-		            </br>
-		            <p>{{featured_article.body}}</p>
-		            </br>
-			
-		            <a href="/articles/detail/{{ featured_article.id }}">read more</a></br>
-		       
+		            <h1>Top 10 List</h1></br>
+			        {% if featured_article %}
+				        <small class="text-muted">{{datenow}} | <a href="#">{{featured_article.author_name}}</a></br>
+				        
+			            <img src="{{MEDIA_URL}}{{featured_article.hero_image}}"/>
+			            
+			            </br>
+			            </br>
+			            <p>{{featured_article.body}}</p>
+			            </br>
+				
+			            <a href="/articles/detail/{{ featured_article.id }}">read more</a></br>
+		            {% endif %}
 		        </div>
  
             
@@ -64,7 +65,7 @@
 
 					{% empty %}
 					        
-					        <li>No articles to show</li>
+					        <ul>No article list</ul>
 
 					{% endfor %}
 					
