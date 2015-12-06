@@ -58,7 +58,7 @@ def index(request):
     selected_articles = selected_articles[1:]
     
     #to trim the preview article's body
-    featured_article.body= featured_article.body[0:20] + "..." if len(featured_article.body) > 2 else featured_article.body
+    featured_article.body= featured_article.body[0:200] + "..." if len(featured_article.body) > 2 else featured_article.body
     
     #article list to display, to get the articles lesser than or equal to todays date in ascending order
     sorted_article_list=Article.objects.all().filter(pub_date__lte=timezone.now()).exclude(id=featured_article.id).order_by('pub_date')[0:3]
