@@ -1,17 +1,38 @@
+<!-- suggestion template -->
+
 {% block suggestion %}
-</br>
-</br>
-</br>
-</br>
-<h2>Random suggestions</h2>
-<div class="articles-list">
-    <ul style="list-style: none; padding: 0;">
-    {% for article in articles %}
-        <ul><img src="{{MEDIA_URL}}{{article.hero_image}}" style="width:50px"/></ul>
-        <ul><a href="{% url 'articles:detail' article.id %}">{{ article.title }}</a></ul>
-    {% empty %}
-        <ul>No articles to show</ul>
-    {% endfor %}
-    </ul>
+
+<div class="col-sm-12 suggestion">
+            
+              <div class="sugg-heading">
+              		<strong>What To Read Next</strong>
+              		<span class="pull-right">
+                       
+              			<a href = "#"><i class="fa fa-angle-left"></i></a>
+              			<i class="sep">|</i>
+              			<a href = "#"><i class="fa fa-angle-right"></i></a>
+                       
+              		</span>
+              </div>
+
 </div>
+
+<div class="articles-list">
+    {% for article in articles %}
+        
+        <div class="col-sm-3">
+	       
+	       <img src="{{MEDIA_URL}}{{article.hero_image}}" height="150" style="width:100%"/>
+	       <b><a href="{% url 'articles:detail' article.id %}">{{ article.title }}</a></b>
+
+        </div>
+
+    {% empty %}
+        
+        <p>No articles to show</p>
+
+    {% endfor %}
+  
+</div>
+
 {% endblock %}

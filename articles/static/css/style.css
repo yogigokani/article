@@ -41,23 +41,17 @@
 	display: block;
 	width: 100%;
 }
-/*.suggestion-title{
-	
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-}*/
+
 .suggestion{
     margin-top:10px;
 	
 }
 .suggestion > div > div > img{
-	/*width:100px; 
-	height:100px;*/
-	 
+	
 	background-size: cover; 
 	width:100%;
 }
-.papa {
+.number{
 margin-top: 30px;
 padding-left: 0px;
 padding-right: 30px;
@@ -80,4 +74,28 @@ padding: 20px 0px;
 }
 .escobar {
 	padding-left: 0px!important;
+}
+.article-list {
+	display: block;
+    padding: 0px !important;
+
+}
+.sugg-heading {
+	display: block;
+	font-size: 14px;
+	padding: 10px 0px;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.sugg-heading > strong {
+	font-size: 20px;
+}
+.sugg-heading > span > i{
+	font-size: 20px;
+	
+}
+.sugg-heading > span > .sep{
+	color: #ccc;
 }
